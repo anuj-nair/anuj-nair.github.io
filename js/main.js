@@ -1,131 +1,131 @@
-jQuery(document).ready(function($) {
+function addClass(el, className) {
+  if (el.classList) el.classList.add(className);
+  else if (!hasClass(el, className)) el.className += " " + className;
+}
 
-  // Header fixed and Back to top button
-  $(window).scroll(function() {
-    if ($(this).scrollTop() > 100) {
-      $('.back-to-top').fadeIn('slow');
-      $('#header').addClass('header-fixed');
-    } else {
-      $('.back-to-top').fadeOut('slow');
-      $('#header').removeClass('header-fixed');
-    }
-  });
-
-  if ($(this).scrollTop() > 100) {
-    $('.back-to-top').fadeIn('slow');
-    $('#header').addClass('header-fixed');
+function removeClass(el, className) {
+  if (el.classList) el.classList.remove(className);
+  else if (hasClass(el, className)) {
+    var reg = new RegExp("(\\s|^)" + className + "(\\s|$)");
+    el.className = el.className.replace(reg, " ");
   }
+}
 
-  $('.back-to-top').click(function() {
-    $('html, body').animate({
-      scrollTop: 0
-    }, 1500, 'easeInOutExpo');
-    return false;
-  });
+// function animate_elements(el,intro_classes=[] ,outro_classes=[],counter=0){
+//     var bounding = el.getBoundingClientRect();
+//     // if (bounding.top >= 0 && bounding.left >= 0 && bounding.right <= window.innerWidth && bounding.bottom <= window.innerHeight) {
+//     if (bounding.top >= 0 && bounding.bottom <= window.innerHeight) {
+//         if (counter==3){
+//             el.style.setProperty("opacity","1");
+//             el.style.setProperty("transition", "opacity 0.3s ease-in-out");
+//             for (var i=0; i<outro_classes.length; i++) {
+//                 removeClass(el, outro_classes[i])
+//             }
 
-  // Initiate the wowjs animation library
-  new WOW().init();
+//             for (var i=0; i<intro_classes.length; i++) {
+//                 addClass(el, intro_classes[i])
 
-  // Initiate superfish on nav menu
-  $('.nav-menu').superfish({
-    animation: {
-      opacity: 'show'
-    },
-    speed: 400
-  });
+//             }
+//         }else{
+//             if (counter < 0){
+//                 counter=0;
+//             }
+//             counter++;
+//         }
+//         // console.log('Element is in the viewport!');
+//     } else {
+//         if ( counter == -3){
+//             for (var i=0; i<intro_classes.length; i++) {
+//                 removeClass(el, intro_classes[i])
+//             }
+//             for (var i=0; i<outro_classes.length; i++) {
+//                 addClass(el, outro_classes[i])
+//             }
+//             el.style.setProperty("opacity","0");
+//             el.style.setProperty("transition", "opacity 0.3s ease-in-out");
 
-  // Mobile Navigation
-  if ($('#nav-menu-container').length) {
-    var $mobile_nav = $('#nav-menu-container').clone().prop({
-      id: 'mobile-nav'
-    });
-    $mobile_nav.find('> ul').attr({
-      'class': '',
-      'id': ''
-    });
-    $('body').append($mobile_nav);
-    $('body').prepend('<button type="button" id="mobile-nav-toggle"><i class="fa fa-bars"></i></button>');
-    $('body').append('<div id="mobile-body-overly"></div>');
-    $('#mobile-nav').find('.menu-has-children').prepend('<i class="fa fa-chevron-down"></i>');
+//         }else{
+//             if (counter > 0){
+//                 counter=0;
+//             }
+//             counter--;
+//         }
 
-    $(document).on('click', '.menu-has-children i', function(e) {
-      $(this).next().toggleClass('menu-item-active');
-      $(this).nextAll('ul').eq(0).slideToggle();
-      $(this).toggleClass("fa-chevron-up fa-chevron-down");
-    });
+//         // console.log('Element is NOT in the viewport!');
 
-    $(document).on('click', '#mobile-nav-toggle', function(e) {
-      $('body').toggleClass('mobile-nav-active');
-      $('#mobile-nav-toggle i').toggleClass('fa-times fa-bars');
-      $('#mobile-body-overly').toggle();
-    });
+//     }
+//     return counter
 
-    $(document).click(function(e) {
-      var container = $("#mobile-nav, #mobile-nav-toggle");
-      if (!container.is(e.target) && container.has(e.target).length === 0) {
-        if ($('body').hasClass('mobile-nav-active')) {
-          $('body').removeClass('mobile-nav-active');
-          $('#mobile-nav-toggle i').toggleClass('fa-times fa-bars');
-          $('#mobile-body-overly').fadeOut();
-        }
-      }
-    });
-  } else if ($("#mobile-nav, #mobile-nav-toggle").length) {
-    $("#mobile-nav, #mobile-nav-toggle").hide();
+// }
+
+function animate_elements(el, intro_classes = [], outro_classes = []) {
+  var bounding = el.getBoundingClientRect();
+  // if (bounding.top >= 0 && bounding.left >= 0 && bounding.right <= window.innerWidth && bounding.bottom <= window.innerHeight) {
+  if (bounding.top >= 0 && bounding.bottom <= window.innerHeight) {
+    el.style.setProperty("opacity", "1");
+    el.style.setProperty("transition", "opacity 0.3s ease-in-out");
+    for (var i = 0; i < outro_classes.length; i++) {
+      removeClass(el, outro_classes[i]);
+    }
+
+    for (var i = 0; i < intro_classes.length; i++) {
+      addClass(el, intro_classes[i]);
+    }
+    // console.log('Element is in the viewport!');
+  } else {
+    for (var i = 0; i < intro_classes.length; i++) {
+      removeClass(el, intro_classes[i]);
+    }
+    for (var i = 0; i < outro_classes.length; i++) {
+      addClass(el, outro_classes[i]);
+    }
+    el.style.setProperty("opacity", "0");
+    el.style.setProperty("transition", "opacity 0.3s ease-in-out");
+
+    // console.log('Element is NOT in the viewport!');
   }
+  return counter;
+}
 
-  // Smooth scroll on page hash links
-  $('.nav-menu a, #mobile-nav a, .scrollto').on('click', function() {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      if (target.length) {
-        var top_space = 0;
+window.addEventListener("load", () => {
+  AOS.init({
+    offset: 200,
+    duration: 600,
+    easing: "ease-in-sine",
+  });
+  var scrollSpy = new bootstrap.ScrollSpy(document.body, {
+    target: ".navbar",
+  });
+  // Elements to animate
+  var name = document.querySelector(".name");
+  // var name_counter=0;
+  // var profile_img=document.querySelector(".profile-img");
+  // profile_img.style.setProperty('opacity','0.1')
+  // var profile_img_counter=0;
+  // var aboutme_content=document.querySelector(".aboutme-content");
+  // aboutme_content.style.setProperty('opacity','0.1')
+  // var aboutme_content_counter=0;
 
-        if ($('#header').length) {
-          top_space = $('#header').outerHeight();
-
-          if( ! $('#header').hasClass('header-fixed') ) {
-            top_space = top_space - 20;
-          }
-        }
-
-        $('html, body').animate({
-          scrollTop: target.offset().top - top_space
-        }, 1500, 'easeInOutExpo');
-
-        if ($(this).parents('.nav-menu').length) {
-          $('.nav-menu .menu-active').removeClass('menu-active');
-          $(this).closest('li').addClass('menu-active');
-        }
-
-        if ($('body').hasClass('mobile-nav-active')) {
-          $('body').removeClass('mobile-nav-active');
-          $('#mobile-nav-toggle i').toggleClass('fa-times fa-bars');
-          $('#mobile-body-overly').fadeOut();
-        }
-        return false;
-      }
-    }
+  window.addEventListener('scroll',()=>{
+      name_counter=animate_elements(el=name,intro_classes=['animate__animated', 'animate__bounce']);
+      // console.log('name',name_counter);
+      // profile_img_counter=animate_elements(el=profile_img,intro_classes=['animate__animated', 'animate__zoomIn'],outro_classes=['animate__animated', 'animate__zoomOut'],counter=profile_img_counter);
+      // console.log('profile_image',profile_img_counter);
+      // aboutme_content_counter=animate_elements(el=aboutme_content,intro_classes=['animate__animated', 'animate__slideInRight'],outro_classes=['animate__animated', 'animate__slideOutRight'], counter=aboutme_content_counter);
+      // console.log('aboutme',aboutme_content_counter);
   });
 
-  // Gallery - uses the magnific popup jQuery plugin
-  $('.gallery-popup').magnificPopup({
-    type: 'image',
-    removalDelay: 300,
-    mainClass: 'mfp-fade',
-    gallery: {
-      enabled: true
-    },
-    zoom: {
-      enabled: true,
-      duration: 300,
-      easing: 'ease-in-out',
-      opener: function(openerElement) {
-        return openerElement.is('img') ? openerElement : openerElement.find('img');
-      }
-    }
+  const btn_say_hello = document.querySelector("#say-hello-btn");
+  const contact_tooltip = document.querySelector("#contact-tooltip");
+  const email_id = "nairanuj29@gmail.com";
+
+  // TODO: Copy Email Function
+  btn_say_hello.addEventListener("click", () => {
+    navigator.clipboard.writeText(email_id);
+    contact_tooltip.innerHTML = "Copied: " + email_id;
   });
 
-  // custom code
-
+  btn_say_hello.addEventListener("mouseout", () => {
+    contact_tooltip.innerHTML = "Copy Email ID";
+  });
 });
