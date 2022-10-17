@@ -11,53 +11,6 @@ function removeClass(el, className) {
   }
 }
 
-// function animate_elements(el,intro_classes=[] ,outro_classes=[],counter=0){
-//     var bounding = el.getBoundingClientRect();
-//     // if (bounding.top >= 0 && bounding.left >= 0 && bounding.right <= window.innerWidth && bounding.bottom <= window.innerHeight) {
-//     if (bounding.top >= 0 && bounding.bottom <= window.innerHeight) {
-//         if (counter==3){
-//             el.style.setProperty("opacity","1");
-//             el.style.setProperty("transition", "opacity 0.3s ease-in-out");
-//             for (var i=0; i<outro_classes.length; i++) {
-//                 removeClass(el, outro_classes[i])
-//             }
-
-//             for (var i=0; i<intro_classes.length; i++) {
-//                 addClass(el, intro_classes[i])
-
-//             }
-//         }else{
-//             if (counter < 0){
-//                 counter=0;
-//             }
-//             counter++;
-//         }
-//         // console.log('Element is in the viewport!');
-//     } else {
-//         if ( counter == -3){
-//             for (var i=0; i<intro_classes.length; i++) {
-//                 removeClass(el, intro_classes[i])
-//             }
-//             for (var i=0; i<outro_classes.length; i++) {
-//                 addClass(el, outro_classes[i])
-//             }
-//             el.style.setProperty("opacity","0");
-//             el.style.setProperty("transition", "opacity 0.3s ease-in-out");
-
-//         }else{
-//             if (counter > 0){
-//                 counter=0;
-//             }
-//             counter--;
-//         }
-
-//         // console.log('Element is NOT in the viewport!');
-
-//     }
-//     return counter
-
-// }
-
 function animate_elements(el, intro_classes = [], outro_classes = []) {
   var bounding = el.getBoundingClientRect();
   // if (bounding.top >= 0 && bounding.left >= 0 && bounding.right <= window.innerWidth && bounding.bottom <= window.innerHeight) {
@@ -106,7 +59,7 @@ window.addEventListener("load", () => {
   // var aboutme_content_counter=0;
 
   window.addEventListener('scroll',()=>{
-      name_counter=animate_elements(el=name,intro_classes=['animate__animated', 'animate__bounce']);
+      animate_elements(el=name,intro_classes=['animate__animated', 'animate__bounce']);
       // console.log('name',name_counter);
       // profile_img_counter=animate_elements(el=profile_img,intro_classes=['animate__animated', 'animate__zoomIn'],outro_classes=['animate__animated', 'animate__zoomOut'],counter=profile_img_counter);
       // console.log('profile_image',profile_img_counter);
