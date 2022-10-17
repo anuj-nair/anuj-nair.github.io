@@ -84,7 +84,6 @@ function animate_elements(el, intro_classes = [], outro_classes = []) {
 
     // console.log('Element is NOT in the viewport!');
   }
-  return counter;
 }
 
 window.addEventListener("load", () => {
