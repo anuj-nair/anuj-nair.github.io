@@ -69,7 +69,7 @@ window.addEventListener("load", () => {
 
   const btn_say_hello = document.querySelector("#say-hello-btn");
   const contact_tooltip = document.querySelector("#contact-tooltip");
-  const email_id = "nairanuj29@gmail.com";
+  const email_id = "nairanuj29+website@gmail.com";
 
   // TODO: Copy Email Function
   btn_say_hello.addEventListener("click", () => {
