@@ -273,14 +273,16 @@
     </section>
 
     <section id="About" class="row d-flex align-items-center bd-highlight">
-      <div class="col-md-4 p-2 bd-highlight">
-        <div>
+      <div class="col-md-4 p-2 bd-highlight profile_pic_col">
+        <div class="profile-img-section">
           <img
             data-aos="slide-right"
-            src="assets/imgs/me.jpg"
+            src="assets/imgs/profile_pic.jpg"
             class="img-fluid w-90 img-thumbnail profile-img"
             alt="anuj-image"
+            loading="lazy"
           />
+          <div class="profile_pic_overlay"></div>
         </div>
       </div>
       <div
@@ -306,7 +308,7 @@
       </div>
     </section>
 
-    <section id="Skills" class="row d-flex align-items-center bd-highlight">
+    <!-- <section id="Skills" class="row d-flex align-items-center bd-highlight">
       <div class="bd-highlight">
         <h1 class="primary bigfs font-monospace fw-bolder">Skills</h1>
         <div class="row my-3">
@@ -359,7 +361,7 @@
           <div
             class="col-md-4 logo d-flex align-items-center justify-content-end"
           >
-            <img src="assets/icons/js.svg" class="js" alt="JavaScript Logo" />
+            <img src="assets/icons/js.svg" class="js" alt="JavaScript Logo" loading="lazy"/>
           </div>
           <div class="col-md-8 progress-bars d-flex align-items-center">
             <div class="progress">
@@ -380,7 +382,7 @@
           <div
             class="col-md-4 logo d-flex align-items-center justify-content-end"
           >
-            <img src="assets/icons/go.svg" class="go" alt="Go Logo" />
+            <img src="assets/icons/go.svg" class="go" alt="Go Logo" loading="lazy"/>
           </div>
           <div class="col-md-8 progress-bars d-flex align-items-center">
             <div class="progress">
@@ -393,6 +395,563 @@
                 aria-valuemax="100"
               >
                 20%
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <section id="Skills" class="row d-flex align-items-center bd-highlight">
+      <div class="bd-highlight">
+        <h1 class="primary bigfs font-monospace fw-bolder">Skills</h1>
+      </div>
+      <nav class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a
+          class="nav-link active"
+          id="nav-general-tab"
+          data-bs-toggle="tab"
+          href="#nav-general"
+          role="tab"
+          aria-controls="nav-general"
+          aria-selected="true"
+          >General</a
+        >
+        <a
+          class="nav-link"
+          id="nav-language-tab"
+          data-bs-toggle="tab"
+          href="#nav-language"
+          role="tab"
+          aria-controls="nav-language"
+          aria-selected="false"
+          >Languages</a
+        >
+        <a
+          class="nav-link"
+          id="nav-ds-tab"
+          data-bs-toggle="tab"
+          href="#nav-ds"
+          role="tab"
+          aria-controls="nav-ds"
+          aria-selected="false"
+          >Data Science</a
+        >
+        <a
+          class="nav-link"
+          id="nav-want-tab"
+          data-bs-toggle="tab"
+          href="#nav-want"
+          role="tab"
+          aria-controls="nav-want"
+          aria-selected="false"
+          >Want to learn</a
+        >
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div
+          class="tab-pane fade show active"
+          id="nav-general"
+          role="tabpanel"
+          aria-labelledby="nav-general-tab"
+        >
+          <div class="row">
+            <div class="col-sm-6 col-md-2 logo-block d-flex flex-column">
+              <div class="row logo d-flex justify-content-center">
+                <img
+                  src="assets/icons/github.svg"
+                  class="github"
+                  alt="GitHub Logo"
+                />
+              </div>
+              <div
+                class="row text-center d-flex justify-content-center logo_title"
+              >
+                GitHub
+              </div>
+              <div class="row rating" data-rating="5">
+                <!-- &#9733 &#9733 &#9733 &#9733 &#9733 -->
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-2 logo-block d-flex flex-column">
+              <div class="row logo d-flex justify-content-center">
+                <img
+                  src="assets/icons/linux.svg"
+                  class="linux"
+                  alt="Linux Logo"
+                />
+              </div>
+              <div
+                class="row text-center d-flex justify-content-center logo_title"
+              >
+                Linux
+              </div>
+              <div class="row rating" data-rating="5">
+                <!-- &#9733 &#9733 &#9733 &#9733 &#9733 -->
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-2 logo-block d-flex flex-column">
+              <div class="row logo d-flex justify-content-center">
+                <img
+                  src="assets/icons/docker.svg"
+                  class="docker"
+                  alt="Docker Logo"
+                />
+              </div>
+              <div
+                class="row text-center d-flex justify-content-center logo_title"
+              >
+                Docker
+              </div>
+              <div class="row rating" data-rating="5">
+                <!-- &#9733 &#9733 &#9733 &#9733 &#9733 -->
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3 logo-block d-flex flex-column">
+              <div class="row logo d-flex justify-content-center">
+                <img src="assets/icons/aws.svg" class="aws" alt="AWS Logo" />
+              </div>
+              <div
+                class="row text-center d-flex justify-content-center logo_title"
+              >
+                AWS
+              </div>
+              <div class="row rating" data-rating="5">
+                <!-- &#9733 &#9733 &#9733 &#9733 &#9733 -->
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3 logo-block d-flex flex-column">
+              <div class="row logo d-flex justify-content-center">
+                <img src="assets/icons/mysql.svg" class="mysql" alt="MySQL Logo" />
+              </div>
+              <div
+                class="row text-center d-flex justify-content-center logo_title"
+              >
+                MySQL
+              </div>
+              <div class="row rating" data-rating="5">
+                <!-- &#9733 &#9733 &#9733 &#9733 &#9733 -->
+              </div>
+            </div>
+            <!-- <div class="col-sm-6 col-md-3 logo-block d-flex flex-column">
+              <div class="row logo d-flex justify-content-center">
+                <img src="assets/icons/mariadb.svg" class="mariadb" alt="MariaDB Logo" />
+              </div>
+              <div
+                class="row text-center d-flex justify-content-center logo_title"
+              >
+                MariaDB
+              </div>
+              <div class="row rating" data-rating="5">
+              </div>
+            </div> -->
+            
+            <!-- <div class="col-sm-6 col-md-4 logo-block d-flex flex-column">
+              <div class="row logo d-flex justify-content-center">
+                <img
+                  src="assets/icons/nginx.svg"
+                  class="nginx"
+                  alt="Nginx Logo"
+                />
+              </div>
+              <div
+                class="row text-center d-flex justify-content-center logo_title"
+              >
+                Nginx
+              </div>
+              <div class="row rating" data-rating="5">
+              </div>
+            </div> -->
+            <div class="col-sm-6 col-md-2 logo-block d-flex flex-column">
+              <div class="row logo d-flex justify-content-center">
+                <img
+                  src="assets/icons/flask.svg"
+                  class="flask"
+                  alt="Flask Logo"
+                />
+              </div>
+              <div
+                class="row text-center d-flex justify-content-center logo_title"
+              >
+                Flask
+              </div>
+              <div class="row rating" data-rating="5">
+                <!-- &#9733 &#9733 &#9733 &#9733 &#9733 -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="nav-language"
+          role="tabpanel"
+          aria-labelledby="nav-language-tab"
+        >
+          <div class="row">
+            <div class="col-sm-6 col-md-2 logo-block d-flex flex-column">
+              <div class="row logo d-flex justify-content-center">
+                <img
+                  src="assets/icons/python.svg"
+                  class="python"
+                  alt="Python Logo"
+                />
+              </div>
+              <div
+                class="row text-center d-flex justify-content-center logo_title"
+              >
+                Python
+              </div>
+              <div class="row rating" data-rating="5">
+                <!-- &#9733 &#9733 &#9733 &#9733 &#9733 -->
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-md-3 logo-block d-flex flex-column">
+              <div class="row logo d-flex justify-content-center">
+                <img
+                  src="assets/icons/r_language.svg"
+                  class="r_lang"
+                  alt="R Programming Language Logo"
+                />
+              </div>
+              <div
+                class="row text-center d-flex justify-content-center logo_title"
+              >
+                R Programming
+              </div>
+              <div class="row rating" data-rating="3">
+                <!-- &#9733 &#9733 &#9734  &#9734 &#9734 -->
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-md-2 logo-block d-flex flex-column">
+              <div class="row logo d-flex justify-content-center">
+                <img
+                  src="assets/icons/js.svg"
+                  class="js"
+                  alt="JavaScript Logo"
+                />
+              </div>
+              <div
+                class="row text-center d-flex justify-content-center logo_title"
+              >
+                JavaScript
+              </div>
+              <div class="row rating" data-rating="4"></div>
+            </div>
+
+            <div class="col-sm-6 col-md-2 logo-block d-flex flex-column">
+              <div class="row logo d-flex justify-content-center">
+                <img src="assets/icons/rust.svg" class="rust" alt="Rust Logo" />
+              </div>
+              <div
+                class="row text-center d-flex justify-content-center logo_title"
+              >
+                Rust
+              </div>
+              <div class="row rating" data-rating="3">
+                <!-- &#9733 &#9733 &#9734  &#9734 &#9734 -->
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 logo-block d-flex flex-column">
+              <div class="row logo d-flex justify-content-center">
+                <img src="assets/icons/go.svg" class="go" alt="Go Logo" />
+              </div>
+              <div
+                class="row text-center d-flex justify-content-center logo_title"
+              >
+                Go
+              </div>
+              <div class="row rating" data-rating="2"></div>
+            </div>
+
+            <div class="col-sm-6 col-md-3 logo-block d-flex flex-column">
+              <div class="row logo d-flex justify-content-center">
+                <img
+                  src="assets/icons/latex.svg"
+                  class="latex"
+                  alt="Latex Logo"
+                />
+              </div>
+              <div
+                class="row text-center d-flex justify-content-center logo_title"
+              >
+                Latex
+              </div>
+              <div class="row rating" data-rating="4"></div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="nav-ds"
+          role="tabpanel"
+          aria-labelledby="nav-ds-tab"
+        >
+          <div class="row">
+            <div class="col-sm-6 col-md-2 logo-block d-flex flex-column">
+              <div class="row logo d-flex justify-content-center">
+                <img
+                  src="assets/icons/pandas.svg"
+                  class="pandas"
+                  alt="Pandas Logo"
+                />
+              </div>
+              <div
+                class="row text-center d-flex justify-content-center logo_title"
+              >
+                Pandas
+              </div>
+              <div class="row rating" data-rating="5">
+                <!-- &#9733 &#9733 &#9733 &#9733 &#9733 -->
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-2 logo-block d-flex flex-column">
+              <div class="row logo d-flex justify-content-center">
+                <img
+                  src="assets/icons/numpy.svg"
+                  class="numpy"
+                  alt="NumPy Logo"
+                />
+              </div>
+              <div
+                class="row text-center d-flex justify-content-center logo_title"
+              >
+                NumPy
+              </div>
+              <div class="row rating" data-rating="5">
+                <!-- &#9733 &#9733 &#9733 &#9733 &#9733 -->
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3 logo-block d-flex flex-column">
+              <div class="row logo d-flex justify-content-center">
+                <img
+                  src="assets/icons/sklearn.svg"
+                  class="sklearn"
+                  alt="Scikit-Learn Logo"
+                />
+              </div>
+              <div
+                class="row text-center d-flex justify-content-center logo_title"
+              >
+                Scikit Learn
+              </div>
+              <div class="row rating" data-rating="5">
+                <!-- &#9733 &#9733 &#9733 &#9733 &#9733 -->
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-2 logo-block d-flex flex-column">
+              <div class="row logo d-flex justify-content-center">
+                <img
+                  src="assets/icons/scipy.svg"
+                  class="scipy"
+                  alt="SciPy Logo"
+                />
+              </div>
+              <div
+                class="row text-center d-flex justify-content-center logo_title"
+              >
+                SciPy
+              </div>
+              <div class="row rating" data-rating="5">
+                <!-- &#9733 &#9733 &#9733 &#9733 &#9733 -->
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-2 logo-block d-flex flex-column">
+              <div class="row logo d-flex justify-content-center">
+                <img
+                  src="assets/icons/matplotlib.svg"
+                  class="matplotlib"
+                  alt="Matplotlib Logo"
+                />
+              </div>
+              <div
+                class="row text-center d-flex justify-content-center logo_title"
+              >
+                Matplotlib
+              </div>
+              <div class="row rating" data-rating="5">
+                <!-- &#9733 &#9733 &#9733 &#9733 &#9733 -->
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-2 logo-block d-flex flex-column">
+              <div class="row logo d-flex justify-content-center">
+                <img
+                  src="assets/icons/seaborn.svg"
+                  class="seaborn"
+                  alt="Seaborn Logo"
+                />
+              </div>
+              <div
+                class="row text-center d-flex justify-content-center logo_title"
+              >
+                Seaborn
+              </div>
+              <div class="row rating" data-rating="5">
+                <!-- &#9733 &#9733 &#9733 &#9733 &#9733 -->
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-2 logo-block d-flex flex-column">
+              <div class="row logo d-flex justify-content-center">
+                <img
+                  src="assets/icons/keras.svg"
+                  class="keras"
+                  alt="Keras Logo"
+                />
+              </div>
+              <div
+                class="row text-center d-flex justify-content-center logo_title"
+              >
+                Keras
+              </div>
+              <div class="row rating" data-rating="5">
+                <!-- &#9733 &#9733 &#9733 &#9733 &#9733 -->
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-2 logo-block d-flex flex-column">
+              <div class="row logo d-flex justify-content-center">
+                <img
+                  src="assets/icons/tensorflow.svg"
+                  class="tensorflow"
+                  alt="Tensorflow Logo"
+                />
+              </div>
+              <div
+                class="row text-center d-flex justify-content-center logo_title"
+              >
+                Tensorflow
+              </div>
+              <div class="row rating" data-rating="5">
+                <!-- &#9733 &#9733 &#9733 &#9733 &#9733 -->
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-2 logo-block d-flex flex-column">
+              <div class="row logo d-flex justify-content-center">
+                <img
+                  src="assets/icons/plotly.svg"
+                  class="plotly"
+                  alt="Plotly Logo"
+                />
+              </div>
+              <div
+                class="row text-center d-flex justify-content-center logo_title"
+              >
+                Plotly
+              </div>
+              <div class="row rating" data-rating="5">
+                <!-- &#9733 &#9733 &#9733 &#9733 &#9733 -->
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-2 logo-block d-flex flex-column">
+              <div class="row logo d-flex justify-content-center">
+                <img
+                  src="assets/icons/pytorch.svg"
+                  class="pytorch"
+                  alt="PyTorch Logo"
+                />
+              </div>
+              <div
+                class="row text-center d-flex justify-content-center logo_title"
+              >
+                PyTorch
+              </div>
+              <div class="row rating" data-rating="5">
+                <!-- &#9733 &#9733 &#9733 &#9733 &#9733 -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="nav-want"
+          role="tabpanel"
+          aria-labelledby="nav-want-tab"
+        >
+          <div class="row">
+            <div class="col-sm-6 col-md-2 logo-block d-flex flex-column">
+              <div class="row logo d-flex justify-content-center">
+                <img
+                  src="assets/icons/kubernetes.svg"
+                  class="kubernetes"
+                  alt="kubernetes Logo"
+                />
+              </div>
+              <div
+                class="row text-center d-flex justify-content-center logo_title"
+              >
+                kubernetes
+              </div>
+              <div class="row rating" data-rating="2">
+                <!-- &#9733 &#9733 &#9733 &#9733 &#9733 -->
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-2 logo-block d-flex flex-column">
+              <div class="row logo d-flex justify-content-center">
+                <img
+                  src="assets/icons/kafka.svg"
+                  class="kafka"
+                  alt="kafka Logo"
+                />
+              </div>
+              <div
+                class="row text-center d-flex justify-content-center logo_title"
+              >
+                Kafka
+              </div>
+              <div class="row rating" data-rating="5">
+                <!-- &#9733 &#9733 &#9733 &#9733 &#9733 -->
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-2 logo-block d-flex flex-column">
+              <div class="row logo d-flex justify-content-center">
+                <img
+                  src="assets/icons/jenkins.svg"
+                  class="jenkins"
+                  alt="Jenkins Logo"
+                />
+              </div>
+              <div
+                class="row text-center d-flex justify-content-center logo_title"
+              >
+                Jenkins
+              </div>
+              <div class="row rating" data-rating="5">
+                <!-- &#9733 &#9733 &#9733 &#9733 &#9733 -->
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-2 logo-block d-flex flex-column">
+              <div class="row logo d-flex justify-content-center">
+                <img
+                  src="assets/icons/django.svg"
+                  class="django"
+                  alt="Django Logo"
+                />
+              </div>
+              <div
+                class="row text-center d-flex justify-content-center logo_title"
+              >
+                Django
+              </div>
+              <div class="row rating" data-rating="5">
+                <!-- &#9733 &#9733 &#9733 &#9733 &#9733 -->
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-2 logo-block d-flex flex-column">
+              <div class="row logo d-flex justify-content-center">
+                <img
+                  src="assets/icons/apache.svg"
+                  class="apache"
+                  alt="Apache Logo"
+                />
+              </div>
+              <div
+                class="row text-center d-flex justify-content-center logo_title"
+              >
+                Apache
+              </div>
+              <div class="row rating" data-rating="5">
+                <!-- &#9733 &#9733 &#9733 &#9733 &#9733 -->
               </div>
             </div>
           </div>
