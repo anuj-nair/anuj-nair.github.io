@@ -224,7 +224,16 @@
         <a class="navbar-brand" href="#Intro">
           <img src="assets/icons/ar_logo.svg" width="60" alt="AR logo" />
         </a>
-        <button
+        <button 
+        class="navbar-toggler collapsed" 
+        type="button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#navbarDark" 
+        aria-controls="navbarDark" 
+        aria-expanded="false" 
+        aria-label="Toggle navigation">
+
+        <!-- <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
@@ -232,10 +241,10 @@
           aria-controls="navbarDark"
           aria-expanded="false"
           aria-label="Toggle navigation"
-        >
+        > -->
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse show" id="navbarDark">
+        <div class="collapse navbar-collapse" id="navbarDark">
           <ul class="navbar-nav me-auto mb-2 mb-xl-0">
             <li class="nav-item">
               <a class="nav-link" href="#About">About</a>
@@ -276,11 +285,11 @@
     </section>
 
     <section id="About" class="row d-flex align-items-center bd-highlight">
-      <div class="col-md-4 p-2 bd-highlight profile_pic_col">
-        <div class="profile-img-section">
+      <div class="col-lg-4 col-md-6 p-2 bd-highlight profile_pic_col lg_pic">
+        <div class="profile-img-section d-flex justify-content-center">
           <img
             data-aos="slide-right"
-            src="assets/imgs/me.jpg"
+            src="assets/imgs/profile_pic.jpeg"
             class="img-fluid w-90 img-thumbnail profile-img"
             alt="anuj-image"
             loading="lazy"
@@ -289,10 +298,22 @@
         </div>
       </div>
       <div
-        class="col-md-6 ps-4 p-2 bd-highlight d-flex justify-content-center aboutme-content"
+        class="col-lg-8 col-md-6 ps-4 p-2 bd-highlight d-flex justify-content-center aboutme-content"
       >
         <div>
           <h1 class="primary bigfs font-monospace fw-bolder">About Me</h1>
+          <div class="col-lg-4 col-md-6 p-2 bd-highlight profile_pic_col sm_pic">
+            <div class="profile-img-section d-flex justify-content-center">
+              <img
+                data-aos="slide-right"
+                src="assets/imgs/profile_pic.jpeg"
+                class="img-fluid w-90 img-thumbnail profile-img"
+                alt="anuj-image"
+                loading="lazy"
+              />
+              <div class="profile_pic_overlay"></div>
+            </div>
+          </div>
           <p class="content">
             I am a linux enthusiast, who loves building python apps and machine
             learning models that can solve problems. Relevant skills include
@@ -924,7 +945,7 @@
               </button>
             </h2>
             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionBasic">
-              <div class="accordion-body">
+              <div class="accordion-body content">
                 ➔ Building machine learning models for vehicle price prediction on
                 monthly basis.
                 <br />
@@ -947,7 +968,7 @@
               </button>
             </h2>
             <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionBasic">
-              <div class="accordion-body">
+              <div class="accordion-body content">
                 ➔ Industrial internship program on Internet of Things and ML using
                 Python organised by STEP - National Institute of Technology,
                 Surathkal, Karnataka.              
@@ -955,71 +976,6 @@
             </div>
           </div>
         </div>
-
-
-
-        <!-- <div class="d-flex align-items-start">
-          <div
-            class="nav flex-column nav-pills me-3 exp-link"
-            id="v-pills-tab"
-            role="tablist"
-            aria-orientation="vertical"
-          >
-            <a
-              class="ex-nav-link text-decoration-none active"
-              id="v-pills-keemut-tab"
-              data-bs-toggle="pill"
-              href="#v-pills-keemut"
-              role="tab"
-              aria-controls="v-pills-keemut"
-              aria-selected="true"
-              >Keemut<br />
-              <pre>April 2021 - June 2022</pre>
-            </a>
-            <a
-              class="ex-nav-link text-decoration-none"
-              id="v-pills-snii-tab"
-              data-bs-toggle="pill"
-              href="#v-pills-snii"
-              role="tab"
-              aria-controls="v-pills-snii"
-              aria-selected="false"
-              >STEP-NITK Industrial Internship<br />
-              <pre>Dec 2020 - Jan 2021</pre>
-            </a>
-          </div>
-          <div class="tab-content" id="v-pills-tabContent" class="exp-content">
-            <div
-              class="tab-pane fade show active"
-              id="v-pills-keemut"
-              role="tabpanel"
-              aria-labelledby="v-pills-keemut-tab"
-            >
-              ➔ Building machine learning models for vehicle price prediction on
-              monthly basis.
-              <br />
-              ➔ Worked on web crawlers for collecting vehicle data.
-              <br />
-              ➔ Created bash and python scripts for cleaning crawled data and
-              building machine learning model.
-              <br />
-              ➔ Created cronjobs to aggregate data for data analytic dashboards.
-              <br />
-              ➔ Automated the machine learning pipe-line and reduced the time
-              taken by 50%.
-            </div>
-            <div
-              class="tab-pane fade"
-              id="v-pills-snii"
-              role="tabpanel"
-              aria-labelledby="v-pills-snii-tab"
-            >
-              ➔ Industrial internship program on Internet of Things and ML using
-              Python organised by STEP - National Institute of Technology,
-              Surathkal, Karnataka.
-            </div>
-          </div>
-        </div> -->
       </div>
     </section>
 
@@ -1039,7 +995,7 @@
                 </a>
               </h2>
             </div>
-            <div class="project-detail">
+            <div class="project-detail content">
               <span>
                 It's a fun project created to interact with the MNIST model. A
                 web app with a canvas to draw numbers and then predict the
@@ -1048,7 +1004,7 @@
               </span>
             </div>
           </div>
-          <div class="col-lg-6 col-md-12 project-content">
+          <div class="col-lg-6 col-md-12 project-content d-flex justify-content-center">
             <video class="project_content" autoplay loop muted playsinline>
               <source
                 src="assets/projects/Project_MNIST_Demo2.mp4"
@@ -1068,7 +1024,7 @@
                 </a>
               </h2>
             </div>
-            <div class="project-detail">
+            <div class="project-detail content">
               <span>
                 AI Snake Game Using Reinforcement Learning
                 <br />
@@ -1082,7 +1038,7 @@
               </a>
             </div>
           </div>
-          <div class="col-lg-6 col-md-12 project-content">
+          <div class="col-lg-6 col-md-12 project-content d-flex justify-content-center">
             <video class="project_content" autoplay loop muted playsinline>
               <source
                 src="assets/projects/AI_Snake_Game.mp4"
@@ -1102,7 +1058,7 @@
                 </a>
               </h2>
             </div>
-            <div class="project-detail">
+            <div class="project-detail content">
               <span>
                 Implementation A* Algorithm and Visualization using PyGame
                 <br />
@@ -1116,7 +1072,7 @@
               </a>
             </div>
           </div>
-          <div class="col-lg-6 col-md-12 project-content">
+          <div class="col-lg-6 col-md-12 project-content d-flex justify-content-center">
             <video class="project_content" autoplay loop muted playsinline>
               <source
                 src="assets/projects/A-star_Algo_Demo.mp4"
@@ -1128,17 +1084,15 @@
       </div>
     </section>
 
-    <section id="Contact" class="row d-flex align-items-center bd-highlight">
+    <section id="Contact" class="row d-flex justify-content-center text-center align-items-center bd-highlight">
       <div class="row d-flex justify-content-center align-items-center">
         <div class="text-center">
           <h1 class="primary bigfs font-monospace fw-bolder">Get In Touch</h1>
         </div>
-        <!-- <p class="contact-content">
-            Looking forward for collaborating with you.
-          </p> -->
-        <div class="contact-btn text-center">
+        <div class="contact-btn d-flex justify-content-center justify-self-center">
           <a
             id="say-hello-btn"
+            class="justify-self-center"
             target="_blank"
             href="mailto:nairanuj29+website@gmail.com"
           >
