@@ -150,7 +150,7 @@ p {
   
 } */
 
-.resume-btn {
+.demo-btn, .resume-btn {
   padding: 10px 20px;
   margin: 20px 0%;
   color: var(--accent-color);
@@ -162,7 +162,7 @@ p {
   cursor: pointer;
 }
 
-.resume-btn:before {
+.demo-btn:before, .resume-btn:before {
   content: "";
   position: absolute;
   width: calc(100% + 4px);
@@ -189,7 +189,7 @@ p {
   opacity: 100%;
 }
 
-.resume-btn:hover:before {
+.demo-btn:hover:before, .resume-btn:hover:before {
   color: var(--accent-color);
   background-size: 200% 2px, 2px 400%, 2px 400%, 55% 2px, 55% 2px;
   background-position: 50% 100%, 0% 100%, 100% 100%, 100% 0%, 0% 0%;
@@ -198,7 +198,7 @@ p {
   opacity: 100%;
 }
 
-.resume-btn:hover {
+.demo-btn:hover, .resume-btn:hover {
   color: var(--accent-color);
   background-size: 200% 2px, 2px 400%, 2px 400%, 55% 2px, 55% 2px;
   background-position: 50% 100%, 0% 100%, 100% 100%, 100% 0%, 0% 0%;
