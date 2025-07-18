@@ -1,10 +1,15 @@
 :root {
-  --bg-color: #28282b;
+  --dark-bg-color: #1e3a8a;
+  --light-bg-color: #4f46e5;
+  --accent-bg-color: #7c3aed;
+  --bg-color: linear-gradient(90deg, var(--dark-bg-color) 0%, var(--light-bg-color) 50%, var(--accent-bg-color) 100%);
   --primary-color: #f8f0e3;
-  --accent-color: yellow;
-  /* --accent-color: var(--accent-color); */
+  --accent-color: #a78bfa; /* Soft purple accent */
 }
 
+*{
+    background-color: var(--bg-color);
+}
 html,
 body {
   margin: 0;
@@ -13,7 +18,10 @@ body {
   padding: 0;
   background: var(--bg-color);
   color: var(--primary-color);
+  background-attachment: fixed;
+  background-size: cover;
 }
+
 body {
   position: relative;
 }
@@ -31,7 +39,7 @@ section {
 }
 a {
   color: var(--accent-color);
-  opacity: 0.5;
+  opacity: 1;
   transition: opacity 0.3s ease-in-out;
   text-decoration: none;
 }
@@ -51,6 +59,7 @@ p {
   font-size: 400%;
   color: var(--primary-color);
 }
+
 .bigfs {
   font-size: 200%;
 }
@@ -59,7 +68,7 @@ p {
   /* color:#00CDD0; */
   /* color:#FF5E00; */
   color: var(--accent-color);
-  opacity: 0.8;
+  opacity: .8;
 }
 
 .content {
@@ -67,7 +76,21 @@ p {
   text-justify: newspaper;
 }
 
+.vertical-bar {
+  height: 25px;
+  border-left: 2px solid var(--primary-color);
+  padding-left: 10px;
+}
+/* Intro */
+
+span.vertical-bar {
+  margin: 0 10px;
+}
+
 /* Nav Bar */
+.navbar{
+    background-color: var(--dark-bg-color) !important;
+}
 .navbar-brand {
   color: var(--primary-color);
 }
@@ -101,54 +124,12 @@ p {
 .profile_pic_col {
   position: relative;
 }
-/* .profile_pic {
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  background-color: var(--accent-color);
-  width: 100%;
-  height: 100%;
-  opacity: 1;
-  width: auto;
-  height: 80%;
-  transition: all 0.3s ease-in-out;
-}
 
-.profile_pic:hover {
-  opacity: 0;
-  transition: all 0.3s ease-in-out;
-} */
 .profile-img {
   opacity: 1;
-  width: 90%;
+  width: 100%;
   height: auto;
-  -webkit-filter: grayscale(70%);
-  -moz-filter: grayscale(70%);
-  -ms-filter: grayscale(70%);
-  -o-filter: grayscale(70%);
-  filter: grayscale(70%);
-  /* -webkit-transition: 1s -webkit-filter linear;
-  -moz-transition: 1s -moz-filter linear;
-  -moz-transition: 1s filter linear;
-  -ms-transition: 1s -ms-filter linear;
-  -o-transition: 1s -o-filter linear;
-  transition: 1s filter linear, 1s -webkit-filter linear;  */
 }
-
-/* .profile-img:hover {
-  -webkit-filter: grayscale(0%) hue-rotate(0deg);
-  -moz-filter: grayscale(0%) hue-rotate(0deg);
-  -ms-filter: grayscale(0%) hue-rotate(0deg);
-  -o-filter: grayscale(0%) hue-rotate(0deg);
-  filter: grayscale(0%) hue-rotate(0deg);
-  -webkit-transition: 1s -webkit-filter linear;
-  -moz-transition: 1s -moz-filter linear;
-  -moz-transition: 1s filter linear;
-  -ms-transition: 1s -ms-filter linear;
-  -o-transition: 1s -o-filter linear;
-  transition: 1s filter linear, 1s -webkit-filter linear;
-  
-} */
 
 .demo-btn, .resume-btn {
   padding: 10px 20px;
@@ -218,12 +199,13 @@ p {
 .logo-block {
   border-radius: 3rem;
   /* border: 5px solid var(--primary-color); */
-  margin: 10px 5px;
+  padding: 0px;
+  margin: 0px 5px 5px;
 }
 
 .logo {
   aspect-ratio: 1;
-  height: 5em;
+  height: 4em;
 }
 
 .logo > img {
@@ -275,12 +257,6 @@ p {
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='yellow'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
 }
 
-#Experience .vertical-bar {
-  height: 25px;
-  border-left: 2px solid var(--accent-color);
-  padding-left: 10px;
-}
-
 #Experience .ex-nav-link {
   /* padding: 0.05rem 0.375rem; */
   /* border-radius: 0.375rem; */
@@ -288,7 +264,7 @@ p {
   font-size: 24px;
   padding: 10px 20px;
   margin: 20px 0%;
-  color: var(--accent-color);
+  color: var(--primary-color);
   background-color: var(--bg-color);
   opacity: 50%;
   text-transform: uppercase;
@@ -307,16 +283,16 @@ p {
   height: calc(100% + 4px);
   top: calc(2px / -1);
   left: calc(2px / -1);
-  color: var(--accent-color);
+  color: var(--primary-color);
   background: linear-gradient(
       to right,
-      var(--accent-color) 0%,
-      var(--accent-color) 100%
+      var(--primary-color) 0%,
+      var(--primary-color) 100%
     ),
-    linear-gradient(to top, var(--accent-color) 50%, transparent 50%),
-    linear-gradient(to top, var(--accent-color) 50%, transparent 50%),
-    linear-gradient(to right, var(--accent-color) 0%, var(--accent-color) 100%),
-    linear-gradient(to left, var(--accent-color) 0%, var(--accent-color) 100%);
+    linear-gradient(to top, var(--primary-color) 50%, transparent 50%),
+    linear-gradient(to top, var(--primary-color) 50%, transparent 50%),
+    linear-gradient(to right, var(--primary-color) 0%, var(--primary-color) 100%),
+    linear-gradient(to left, var(--primary-color) 0%, var(--primary-color) 100%);
   background-size: 100% 2px, 2px 200%, 2px 200%, 0% 2px, 0% 2px;
   background-position: 50% 100%, 0% 0%, 100% 0%, 100% 0%, 0% 0%;
   background-repeat: no-repeat, no-repeat;
@@ -329,7 +305,7 @@ p {
 
 #Experience .ex-nav-link:hover:before,
 #Experience .ex-nav-link:focus:before {
-  color: var(--accent-color);
+  color: var(--primary-color);
   background-size: 200% 2px, 2px 400%, 2px 400%, 55% 2px, 55% 2px;
   background-position: 50% 100%, 0% 100%, 100% 100%, 100% 0%, 0% 0%;
   transform: scaleX(1) rotate(0deg);
@@ -339,7 +315,7 @@ p {
 
 #Experience .ex-nav-link:hover,
 #Experience .ex-nav-link:focus {
-  color: var(--accent-color);
+  color: var(--primary-color);
   background-size: 200% 2px, 2px 400%, 2px 400%, 55% 2px, 55% 2px;
   background-position: 50% 100%, 0% 100%, 100% 100%, 100% 0%, 0% 0%;
   transform: scaleX(1) rotate(0deg);
@@ -347,14 +323,14 @@ p {
   opacity: 100%;
 }
 #Experience .ex-nav-link:active {
-  color: var(--accent-color);
-  border-color: var(--accent-color);
+  color: var(--primary-color);
+  border-color: var(--primary-color);
   border-width: 2px;
   border-style: none none solid none;
 }
 #Experience .ex-nav-link.active {
-  color: var(--accent-color);
-  border-color: var(--accent-color);
+  color: var(--primary-color);
+  border-color: var(--primary-color);
   border-width: 2px;
   border-style: none none solid none;
 }
