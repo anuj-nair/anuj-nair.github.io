@@ -1,0 +1,21 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <rect style="fill:none;stroke:#F8F0E3;stroke-width:1;stroke-dasharray:none;stroke-opacity:1" id="rect328"
+      width="99.999985" height="99.999985" x="9.999999" y="9.999999" />
+    <path
+      style="display:inline;fill:none;stroke:#F8F0E3;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+      d="M 64.760292,58.868607 79.741057,87.398664" id="path1069" label="backward_slash_small_1" />
+    <path
+      style="display:inline;fill:none;stroke:#ffffff;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+      d="M 85.939831,48.490771 57.32115,62.263164" id="path1067" label="forward_slash_small_1" />
+    <path
+      style="fill:none;stroke:#F8F0E3;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+      d="M 30.319037,75.228368 57.26016,18.258513" id="path1061" label="forward_slant_line_big_1" />
+    <path
+      style="fill:none;stroke:#F8F0E3;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+      d="m 57.263784,18.331169 0.0066,83.836551" id="path1063" label="straight_line_big_1" />
+    <path
+      style="fill:none;stroke:#F8F0E3;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+      d="m 21.269448,48.269145 81.015862,-0.03143" id="path1065" label="horizontal_line_big_1" />
+  </g>
+</svg>

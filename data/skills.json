@@ -1,0 +1,205 @@
+{
+  "skillDepartments": [
+    {
+      "id": "programming",
+      "title": "Programming Languages",
+      "description": "Core programming languages and scripting",
+      "color": "#3b82f6",
+      "skills": [
+        {
+          "name": "Python",
+          "iconPath": "/assets/icons/python.svg",
+          "hasIcon": true
+        },
+        {
+          "name": "JavaScript",
+          "iconPath": "/assets/icons/js.svg",
+          "hasIcon": true
+        },
+        {
+          "name": "Bash",
+          "iconPath": "/assets/icons/bash.svg",
+          "hasIcon": true
+        },
+        {
+          "name": "R Programming",
+          "iconPath": "/assets/icons/r_language.svg",
+          "hasIcon": true
+        },
+        {
+          "name": "Rust",
+          "iconPath": "/assets/icons/rust.svg",
+          "hasIcon": true
+        },
+        {
+          "name": "Java",
+          "iconPath": "/assets/icons/java.svg",
+          "hasIcon": true
+        }
+      ]
+    },
+    {
+      "id": "ai-ml",
+      "title": "AI & Machine Learning",
+      "description": "Artificial Intelligence, ML frameworks and data science",
+      "color": "#8b5cf6",
+      "skills": [
+        {
+          "name": "OpenAI",
+          "iconPath": "/assets/icons/openai.svg",
+          "hasIcon": true
+        },
+        {
+          "name": "Ollama",
+          "iconPath": "/assets/icons/ollama.svg",
+          "hasIcon": true
+        },
+        {
+          "name": "TensorFlow",
+          "iconPath": "/assets/icons/tensorflow.svg",
+          "hasIcon": true
+        },
+        {
+          "name": "PyTorch",
+          "iconPath": "/assets/icons/pytorch.svg",
+          "hasIcon": true
+        },
+        {
+          "name": "Optuna",
+          "iconPath": "/assets/icons/optuna.png",
+          "hasIcon": true
+        },
+        {
+          "name": "Pandas",
+          "iconPath": "/assets/icons/pandas.svg",
+          "hasIcon": true
+        },
+        {
+          "name": "Plotly",
+          "iconPath": "/assets/icons/plotly.svg",
+          "hasIcon": true
+        }
+      ]
+    },
+    {
+      "id": "cloud-devops",
+      "title": "Cloud & DevOps",
+      "description": "Cloud platforms, containerization and CI/CD",
+      "color": "#10b981",
+      "skills": [
+        {
+          "name": "AWS",
+          "iconPath": "/assets/icons/aws.svg",
+          "hasIcon": true
+        },
+        {
+          "name": "Google Cloud",
+          "iconPath": "/assets/icons/gcp.svg",
+          "hasIcon": true
+        },
+        {
+          "name": "Docker",
+          "iconPath": "/assets/icons/docker.svg",
+          "hasIcon": true
+        },
+        {
+          "name": "Jenkins",
+          "iconPath": "/assets/icons/jenkins.svg",
+          "hasIcon": true
+        },
+        {
+          "name": "GitLab CI/CD",
+          "iconPath": "/assets/icons/gitlab.svg",
+          "hasIcon": true
+        },
+        {
+          "name": "Git",
+          "iconPath": "/assets/icons/git.svg",
+          "hasIcon": true
+        }
+      ]
+    },
+    {
+      "id": "backend-db",
+      "title": "Backend & Databases",
+      "description": "Web frameworks, databases and backend technologies",
+      "color": "#f59e0b",
+      "skills": [
+        {
+          "name": "Django",
+          "iconPath": "/assets/icons/django.svg",
+          "hasIcon": true
+        },
+        {
+          "name": "Flask",
+          "iconPath": "/assets/icons/flask.svg",
+          "hasIcon": true
+        },
+        {
+          "name": "FastAPI",
+          "iconPath": "/assets/icons/FastAPI.svg",
+          "hasIcon": true
+        },
+        {
+          "name": "PostgreSQL",
+          "iconPath": "/assets/icons/postgresql.svg",
+          "hasIcon": true
+        },
+        {
+          "name": "SQLite",
+          "iconPath": "/assets/icons/sqlite.svg",
+          "hasIcon": true
+        },
+        {
+          "name": "REST APIs",
+          "iconPath": "/assets/icons/restapi.svg",
+          "hasIcon": true
+        }
+      ]
+    },
+    {
+      "id": "automation-tools",
+      "title": "Automation & Development Tools",
+      "description": "Development environment and Automation tools",
+      "color": "#ef4444",
+      "skills": [
+        {
+          "name": "Linux",
+          "iconPath": "/assets/icons/linux.svg",
+          "hasIcon": true
+        },
+        {
+          "name": "VS Code",
+          "iconPath": "/assets/icons/vscode.svg",
+          "hasIcon": true
+        },
+        {
+          "name": "Jupyter",
+          "iconPath": "/assets/icons/jupyter.svg",
+          "hasIcon": true
+        },
+        {
+          "name": "GitHub",
+          "iconPath": "/assets/icons/github.svg",
+          "hasIcon": true
+        },
+        {
+          "name": "N8N",
+          "iconPath": "/assets/icons/n8n_color.svg",
+          "hasIcon": true
+        },
+        {
+          "name": "Selenium",
+          "iconPath": "/assets/icons/selenium.svg",
+          "hasIcon": true
+        }
+      ]
+    }
+  ],
+  "configuration": {
+    "lastUpdated": "2025-01-25",
+    "totalSkills": 35,
+    "availableIcons": "All icons are available in /public/assets/icons/",
+    "note": "Skills are organized by department for better categorization and visual hierarchy"
+  }
+}

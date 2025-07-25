@@ -1,0 +1,15 @@
+{
+  "short_name": "Anuj Nair",
+  "name": "Anuj Nair Portfolio",
+  "icons": [
+    {
+      "src": "assets/icons/ar-logo-bg.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#1e3a8a",
+  "background_color": "#1e3a8a"
+}
