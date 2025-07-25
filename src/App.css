@@ -147,19 +147,29 @@ section {
 }
 
 .intro-name {
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: bold;
   margin-bottom: 1rem;
   background: linear-gradient(45deg, #ffffff, var(--accent-color));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  line-height: 1.1;
 }
 
 .intro-skills {
   font-size: 1.5rem;
   color: var(--text-muted);
   margin-bottom: 2rem;
+  line-height: 1.6;
+  word-spacing: 0.2em;
+}
+.intro-skill{
+  margin: 0 0 0 0.5rem;
+}
+.skill-separator {
+  margin: 0 0.5rem 0 0;
+  color: var(--accent-color);
 }
 
 .skill-separator {
@@ -1334,7 +1344,7 @@ section {
   }
 
   .intro-name {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
   }
 }
 
@@ -1348,11 +1358,22 @@ section {
   }
 
   .intro-name {
-    font-size: 3rem;
+    font-size: 4rem;
   }
 
   .intro-skills {
     font-size: 1.3rem;
+    text-align: left;
+    line-height: 1.8;
+    word-spacing: 0.3em;
+  }
+  
+  .intro-skill{
+    margin: 0 0.3rem 0 0 ;
+  }
+
+  .skill-separator {
+    margin: 0 0.3rem 0 0;
   }
 
   .timeline {
@@ -1383,11 +1404,24 @@ section {
   }
 
   .intro-name {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
   }
 
   .intro-skills {
     font-size: 1.2rem;
+    text-align: left;
+    line-height: 2;
+    word-spacing: 0.4em;
+    padding: 0 1rem;
+  }
+
+  .intro-skill{
+    margin: 0 0.2rem 0 0;
+  }
+
+  .skill-separator {
+    margin: 0 0.2rem 0 0;
+    display: inline-block;
   }
 
   .intro-description {
@@ -1555,7 +1589,7 @@ section {
 
 @media (max-width: 576px) {
   .intro-name {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
   .section-title {
@@ -1742,7 +1776,7 @@ section {
 
 @media (max-width: 576px) {
   .intro-name {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
   .section-title {

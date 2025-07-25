@@ -7,7 +7,7 @@ const Intro: React.FC = () => {
 
   useScrollAnimation({
     elementRef: nameRef,
-    introClasses: ['animate__animated', 'animate__bounce'],
+    introClasses: ['animate__animated', 'animate__fadeIn'],
     threshold: 0.3
   });
 
@@ -30,11 +30,12 @@ const Intro: React.FC = () => {
                 Anuj Nair
               </h1>
               <p className="intro-skills">
-                Python <span className="skill-separator">|</span> 
-                ML <span className="skill-separator">|</span> 
-                LLM <span className="skill-separator">|</span> 
-                Automation <span className="skill-separator">|</span> 
-                Cloud
+                <span className='intro-skill'>Python</span><span className="skill-separator">|</span> 
+                <span className='intro-skill'>AI/ML</span><span className="skill-separator">|</span> 
+                <span className='intro-skill'>LLM</span><span className="skill-separator">|</span> 
+                <span className='intro-skill'>Automation</span><span className="skill-separator">|</span> 
+                <span className='intro-skill'>DevOps</span><span className="skill-separator">|</span> 
+                <span className='intro-skill'>Cloud</span>
               </p>
               <p className="intro-description">
                 Passionate about solving real-world problems with cutting-edge technology. 

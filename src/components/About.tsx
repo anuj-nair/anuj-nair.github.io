@@ -54,7 +54,7 @@ const About: React.FC = () => {
         } catch (leetcodeError) {
           console.log('LeetCode API not available, using fallback');
           // Fallback to a reasonable estimate
-          leetcodeSolved = 150;
+          leetcodeSolved = 50;
         }
 
         setStats({

@@ -12,95 +12,94 @@ export const useScrollSpy = ({ sectionIds, offset = 100 }: UseScrollSpyProps) =>
     // Adjust offset for mobile devices
     const isMobile = window.innerWidth <= 768;
     const adjustedOffset = isMobile ? offset + 50 : offset;
+
+    // Intersection Observer for Contact section as backup detection
+    const contactElement = document.getElementById('Contact');
+    let contactObserver: IntersectionObserver | null = null;
+
+    if (contactElement) {
+      contactObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && entry.target.id === 'Contact') {
+              if (activeSection !== 'Contact') {
+                if (process.env.NODE_ENV === 'development') {
+                  console.log('Contact section intersecting, activating Contact');
+                }
+                setActiveSection('Contact');
+              }
+            }
+          });
+        },
+        {
+          threshold: 0.1, // Trigger when 10% of Contact is visible
+          rootMargin: '0px 0px -50px 0px' // Account for navbar
+        }
+      );
+
+      contactObserver.observe(contactElement);
+    }
     
     const handleScroll = () => {
       const scrollPosition = window.scrollY + adjustedOffset;
 
-      // Check if we're near the bottom of the page
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-      const isNearBottom = windowHeight + window.scrollY >= documentHeight - 200;
-
-      // If we're near the bottom, always highlight Contact (last section)
-      if (isNearBottom) {
-        const lastSection = sectionIds[sectionIds.length - 1];
-        if (lastSection && lastSection !== activeSection) {
-          if (process.env.NODE_ENV === 'development') {
-            console.log('Near bottom, setting active section to:', lastSection);
-          }
-          setActiveSection(lastSection);
-        }
-        return;
-      }
-
-      // STICKY CONTACT LOGIC: If Contact is currently active, only change if we scroll back to a previous section
+      // SIMPLIFIED CONTACT LOGIC: Once Contact is active, keep it active until we scroll to another section
       if (activeSection === 'Contact') {
-        // Check if we've scrolled back up to any previous section
-        const contactElement = document.getElementById('Contact');
-        if (contactElement) {
-          const contactTop = contactElement.offsetTop;
-
-          // If we're still at or past the Contact section, keep Contact active
-          if (scrollPosition >= contactTop - 100) {
-            if (process.env.NODE_ENV === 'development') {
-              console.log('Keeping Contact active - still in Contact area');
-            }
-            return; // Keep Contact active
-          }
-
-          // We've scrolled back up, so check which previous section we're in
-          if (process.env.NODE_ENV === 'development') {
-            console.log('Scrolled back up from Contact, checking previous sections');
-          }
-        }
-      }
-
-      // Normal section detection for all sections
-      let currentSection = '';
-
-      // Go through sections in normal order to find the current section
-      for (const sectionId of sectionIds) {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          const sectionBottom = offsetTop + offsetHeight;
-
-          // Check if we're within this section (with some tolerance)
-          if (scrollPosition >= offsetTop - 50 && scrollPosition < sectionBottom + 50) {
-            currentSection = sectionId;
-            break;
-          }
-        }
-      }
-
-      // If no current section found, find the closest one
-      if (!currentSection) {
-        let closestSection = '';
-        let closestDistance = Infinity;
-
-        for (const sectionId of sectionIds) {
+        // Check if we've scrolled back to any previous section
+        for (let i = sectionIds.length - 2; i >= 0; i--) { // Skip Contact (last section)
+          const sectionId = sectionIds[i];
           const element = document.getElementById(sectionId);
           if (element) {
             const { offsetTop, offsetHeight } = element;
-            const sectionCenter = offsetTop + offsetHeight / 2;
-            const distance = Math.abs(scrollPosition - sectionCenter);
+            const sectionBottom = offsetTop + offsetHeight;
 
-            if (distance < closestDistance) {
-              closestDistance = distance;
-              closestSection = sectionId;
+            // If we're clearly in another section, switch to it
+            if (scrollPosition >= offsetTop - 50 && scrollPosition < sectionBottom + 50) {
+              if (process.env.NODE_ENV === 'development') {
+                console.log('Switching from Contact to:', sectionId);
+              }
+              setActiveSection(sectionId);
+              return;
             }
           }
         }
-        currentSection = closestSection;
-      }
-
-      // If no section is found and we're at the top, use the first section
-      if (!currentSection && window.scrollY < 100) {
-        setActiveSection(sectionIds[0] || '');
+        // If we're still not in any other section, stay on Contact
         return;
       }
 
-      // Only update if the section has changed
+      // NORMAL SECTION DETECTION
+      let currentSection = '';
+
+      // Check if we're near the bottom - always activate Contact
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const isNearBottom = window.scrollY + windowHeight >= documentHeight - 200;
+
+      if (isNearBottom) {
+        currentSection = 'Contact';
+      } else {
+        // Check sections in reverse order (last section gets priority)
+        for (let i = sectionIds.length - 1; i >= 0; i--) {
+          const sectionId = sectionIds[i];
+          const element = document.getElementById(sectionId);
+          if (element) {
+            const { offsetTop } = element;
+
+            // If we've scrolled past this section's start, it's active
+            if (scrollPosition >= offsetTop - 100) {
+              currentSection = sectionId;
+              break;
+            }
+          }
+        }
+      }
+
+      // If at the very top, use first section
+      if (!currentSection && window.scrollY < 100) {
+        currentSection = sectionIds[0] || '';
+      }
+
+      // Update active section if it changed
       if (currentSection && currentSection !== activeSection) {
         if (process.env.NODE_ENV === 'development') {
           console.log('Setting active section to:', currentSection, 'at scroll position:', scrollPosition);
@@ -112,8 +111,9 @@ export const useScrollSpy = ({ sectionIds, offset = 100 }: UseScrollSpyProps) =>
     // Initial check
     handleScroll();
     
-    // Add scroll listener with throttling
+    // Simple, responsive scroll listener
     let ticking = false;
+
     const throttledScroll = () => {
       if (!ticking) {
         requestAnimationFrame(() => {
@@ -124,12 +124,18 @@ export const useScrollSpy = ({ sectionIds, offset = 100 }: UseScrollSpyProps) =>
       }
     };
 
-    window.addEventListener('scroll', throttledScroll);
+    window.addEventListener('scroll', throttledScroll, { passive: true });
     window.addEventListener('resize', handleScroll);
 
     return () => {
       window.removeEventListener('scroll', throttledScroll);
       window.removeEventListener('resize', handleScroll);
+
+      // Cleanup intersection observer
+      if (contactObserver && contactElement) {
+        contactObserver.unobserve(contactElement);
+        contactObserver.disconnect();
+      }
     };
   }, [sectionIds, offset, activeSection]);
 

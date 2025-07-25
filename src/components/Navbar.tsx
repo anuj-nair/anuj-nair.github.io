@@ -7,15 +7,14 @@ const Navbar: React.FC = () => {
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault();
-    
     // Close mobile menu if open
     const navbarCollapse = document.getElementById('navbarDark');
     const navbarToggler = document.querySelector('.navbar-toggler') as HTMLButtonElement;
-    
+
     if (navbarCollapse && navbarToggler && !navbarToggler.classList.contains('collapsed')) {
       navbarToggler.click();
     }
-    
+
     // Scroll to section
     const element = document.getElementById(sectionId);
     if (element) {
@@ -24,6 +23,13 @@ const Navbar: React.FC = () => {
         top: offsetTop,
         behavior: 'smooth'
       });
+
+      // For Contact section, ensure it stays active after smooth scrolling
+      // if (sectionId === 'Contact') {
+      //   setTimeout(() => {
+      //     setActiveSection('Contact');
+      //   }, 500); // Small delay to ensure smooth scroll completion
+      // }
     }
   };
 
