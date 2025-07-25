@@ -1,0 +1,52 @@
+/* CSS Variables */
+:root {
+  --dark-bg-color: #1e3a8a;
+  --light-bg-color: #4f46e5;
+  --accent-bg-color: #7c3aed;
+  --bg-color: linear-gradient(90deg, var(--dark-bg-color) 0%, var(--light-bg-color) 50%, var(--accent-bg-color) 100%);
+  --primary-color: #f8f0e3;
+  --accent-color: #8b5cf6;
+  --text-muted: #cbd5e1;
+  --border-color: rgba(248, 240, 227, 0.1);
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --hover-bg: rgba(255, 255, 255, 0.1);
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-color);
+  color: var(--primary-color);
+  scroll-behavior: smooth;
+  position: relative;
+  min-height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Scroll Animations */
+.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.4s ease-out;
+}
+
+.animate-out {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease-out;
+}
