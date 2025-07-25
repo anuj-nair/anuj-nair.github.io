@@ -15,33 +15,98 @@ export const useScrollSpy = ({ sectionIds, offset = 100 }: UseScrollSpyProps) =>
     
     const handleScroll = () => {
       const scrollPosition = window.scrollY + adjustedOffset;
-      
-      // Find the current section
+
+      // Check if we're near the bottom of the page
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const isNearBottom = windowHeight + window.scrollY >= documentHeight - 200;
+
+      // If we're near the bottom, always highlight Contact (last section)
+      if (isNearBottom) {
+        const lastSection = sectionIds[sectionIds.length - 1];
+        if (lastSection && lastSection !== activeSection) {
+          if (process.env.NODE_ENV === 'development') {
+            console.log('Near bottom, setting active section to:', lastSection);
+          }
+          setActiveSection(lastSection);
+        }
+        return;
+      }
+
+      // STICKY CONTACT LOGIC: If Contact is currently active, only change if we scroll back to a previous section
+      if (activeSection === 'Contact') {
+        // Check if we've scrolled back up to any previous section
+        const contactElement = document.getElementById('Contact');
+        if (contactElement) {
+          const contactTop = contactElement.offsetTop;
+
+          // If we're still at or past the Contact section, keep Contact active
+          if (scrollPosition >= contactTop - 100) {
+            if (process.env.NODE_ENV === 'development') {
+              console.log('Keeping Contact active - still in Contact area');
+            }
+            return; // Keep Contact active
+          }
+
+          // We've scrolled back up, so check which previous section we're in
+          if (process.env.NODE_ENV === 'development') {
+            console.log('Scrolled back up from Contact, checking previous sections');
+          }
+        }
+      }
+
+      // Normal section detection for all sections
       let currentSection = '';
-      
+
+      // Go through sections in normal order to find the current section
       for (const sectionId of sectionIds) {
         const element = document.getElementById(sectionId);
         if (element) {
           const { offsetTop, offsetHeight } = element;
-          
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+          const sectionBottom = offsetTop + offsetHeight;
+
+          // Check if we're within this section (with some tolerance)
+          if (scrollPosition >= offsetTop - 50 && scrollPosition < sectionBottom + 50) {
             currentSection = sectionId;
             break;
           }
         }
       }
-      
-      // If no section is found, check if we're at the top
+
+      // If no current section found, find the closest one
+      if (!currentSection) {
+        let closestSection = '';
+        let closestDistance = Infinity;
+
+        for (const sectionId of sectionIds) {
+          const element = document.getElementById(sectionId);
+          if (element) {
+            const { offsetTop, offsetHeight } = element;
+            const sectionCenter = offsetTop + offsetHeight / 2;
+            const distance = Math.abs(scrollPosition - sectionCenter);
+
+            if (distance < closestDistance) {
+              closestDistance = distance;
+              closestSection = sectionId;
+            }
+          }
+        }
+        currentSection = closestSection;
+      }
+
+      // If no section is found and we're at the top, use the first section
       if (!currentSection && window.scrollY < 100) {
-        currentSection = sectionIds[0] || '';
+        setActiveSection(sectionIds[0] || '');
+        return;
       }
-      
-      // If still no section and we're at the bottom, use the last section
-      if (!currentSection && window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
-        currentSection = sectionIds[sectionIds.length - 1] || '';
+
+      // Only update if the section has changed
+      if (currentSection && currentSection !== activeSection) {
+        if (process.env.NODE_ENV === 'development') {
+          console.log('Setting active section to:', currentSection, 'at scroll position:', scrollPosition);
+        }
+        setActiveSection(currentSection);
       }
-      
-      setActiveSection(currentSection);
     };
 
     // Initial check
@@ -66,7 +131,7 @@ export const useScrollSpy = ({ sectionIds, offset = 100 }: UseScrollSpyProps) =>
       window.removeEventListener('scroll', throttledScroll);
       window.removeEventListener('resize', handleScroll);
     };
-  }, [sectionIds, offset]);
+  }, [sectionIds, offset, activeSection]);
 
   return activeSection;
 };

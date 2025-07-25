@@ -3,7 +3,7 @@ import { useScrollSpy } from '../hooks/useScrollSpy';
 
 const Navbar: React.FC = () => {
   const sections = ['Intro', 'About', 'Skills', 'Experience', 'Projects', 'Services', 'Contact'];
-  const activeSection = useScrollSpy({ sectionIds: sections, offset: 150 });
+  const activeSection = useScrollSpy({ sectionIds: sections, offset: 100 });
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault();
