@@ -60,18 +60,13 @@
           "hasIcon": true
         },
         {
-          "name": "Keras",
-          "iconPath": "/assets/icons/keras.svg",
-          "hasIcon": true
-        },
-        {
           "name": "PyTorch",
           "iconPath": "/assets/icons/pytorch.svg",
           "hasIcon": true
         },
         {
-          "name": "Scikit-learn",
-          "iconPath": "/assets/icons/sklearn.svg",
+          "name": "Optuna",
+          "iconPath": "/assets/icons/optuna.png",
           "hasIcon": true
         },
         {
@@ -80,28 +75,8 @@
           "hasIcon": true
         },
         {
-          "name": "NumPy",
-          "iconPath": "/assets/icons/numpy.svg",
-          "hasIcon": true
-        },
-        {
-          "name": "Matplotlib",
-          "iconPath": "/assets/icons/matplotlib.svg",
-          "hasIcon": true
-        },
-        {
-          "name": "Seaborn",
-          "iconPath": "/assets/icons/seaborn.svg",
-          "hasIcon": true
-        },
-        {
           "name": "Plotly",
           "iconPath": "/assets/icons/plotly.svg",
-          "hasIcon": true
-        },
-        {
-          "name": "SciPy",
-          "iconPath": "/assets/icons/scipy.svg",
           "hasIcon": true
         }
       ]
@@ -128,11 +103,6 @@
           "hasIcon": true
         },
         {
-          "name": "Kubernetes",
-          "iconPath": "/assets/icons/kubernetes.svg",
-          "hasIcon": true
-        },
-        {
           "name": "Jenkins",
           "iconPath": "/assets/icons/jenkins.svg",
           "hasIcon": true
@@ -140,11 +110,6 @@
         {
           "name": "GitLab CI/CD",
           "iconPath": "/assets/icons/gitlab.svg",
-          "hasIcon": true
-        },
-        {
-          "name": "Linux",
-          "iconPath": "/assets/icons/linux.svg",
           "hasIcon": true
         },
         {
@@ -181,11 +146,6 @@
           "hasIcon": true
         },
         {
-          "name": "MySQL",
-          "iconPath": "/assets/icons/mysql.svg",
-          "hasIcon": true
-        },
-        {
           "name": "SQLite",
           "iconPath": "/assets/icons/sqlite.svg",
           "hasIcon": true
@@ -199,10 +159,15 @@
     },
     {
       "id": "automation-tools",
-      "title": "Development Tools",
-      "description": "Development environment and productivity tools",
+      "title": "Automation & Development Tools",
+      "description": "Development environment and Automation tools",
       "color": "#ef4444",
       "skills": [
+        {
+          "name": "Linux",
+          "iconPath": "/assets/icons/linux.svg",
+          "hasIcon": true
+        },
         {
           "name": "VS Code",
           "iconPath": "/assets/icons/vscode.svg",
@@ -226,11 +191,6 @@
         {
           "name": "Selenium",
           "iconPath": "/assets/icons/selenium.svg",
-          "hasIcon": true
-        },
-        {
-          "name": "Nginx",
-          "iconPath": "/assets/icons/nginx.svg",
           "hasIcon": true
         }
       ]
