@@ -179,7 +179,7 @@ const Experience: React.FC = () => {
   const categories = [
     { id: 'all', label: 'All Experience', icon: '💼' },
     { id: 'ai', label: 'AI', icon: '🤖' },
-    { id: 'auto', label: 'Automation', icon: '🔧' },
+    { id: 'automation', label: 'Automation', icon: '🔧' },
     { id: 'data', label: 'Data & Analytics', icon: '📊' },
     { id: 'ml', label: 'Machine Learning', icon: '🧠' }
   ];
