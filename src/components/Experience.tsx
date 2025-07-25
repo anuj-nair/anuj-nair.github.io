@@ -107,7 +107,7 @@ const Experience: React.FC = () => {
       duration: '2 months',
       location: 'Remote',
       type: 'Consulting',
-      category: ['ai','auto'],
+      category: ['ai','automation'],
       status: 'current',
       description: [
         'Identified high-impact AI opportunities, from AI-driven automation to machine learning models, creating marketable solutions that drove both efficiency and revenue for clients.',
@@ -119,7 +119,7 @@ const Experience: React.FC = () => {
       technologies: ['OpenAI', 'N8N', 'Ollama', 'Python', 'API Development', 'Automation'],
       achievements: [
         'Built AI-powered automation workflows.',
-        'Perform R&D to find key automation products for various domains.'
+        'Performed R&D to find key automation products for various domains.'
       ]
     },
     {
@@ -130,7 +130,7 @@ const Experience: React.FC = () => {
       duration: '2 years',
       location: 'Hybrid',
       type: 'Part-time',
-      category: ['data','auto'],
+      category: ['data','automation'],
       status: 'completed',
       description: [
         'Built automation for internal tools and products using Python and automation tools like Gitlab CI/CD and Jenkins.',
@@ -155,7 +155,7 @@ const Experience: React.FC = () => {
       duration: '2 years',
       location: 'Remote',
       type: 'Full-time',
-      category: ['ai','auto','ml','data'],
+      category: ['ai','ml','data'],
       status: 'completed',
       description: [
         'Automated the machine learning pipeline and reduced the time taken by more than 50%',

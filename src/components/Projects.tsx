@@ -53,7 +53,7 @@ const Projects: React.FC = () => {
     },
     {
       title: 'AI SNAKE GAME',
-      description: 'AI Snake Game Using Reinforcement Learning. Inspired from Python Engineer tutorials.',
+      description: 'AI Snake Game Using Reinforcement Learning.',
       video: '/assets/projects/AI_Snake_Game.mp4',
       technologies: ['Python', 'Reinforcement Learning', 'PyTorch', 'Pygame'],
       features: [
@@ -72,7 +72,7 @@ const Projects: React.FC = () => {
     },
     {
       title: 'A* Path Finding Algorithm',
-      description: 'Implementation A* Algorithm and Visualization using PyGame. Inspired from Tech With Tim.',
+      description: 'Implementation A* Algorithm and Visualization using PyGame.',
       video: '/assets/projects/A-star_Algo_Demo.mp4',
       technologies: ['Python', 'PyGame', 'Algorithms', 'Visualization'],
       features: [
