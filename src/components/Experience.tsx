@@ -3,7 +3,10 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Experience: React.FC = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
+  const subtitleRef = useRef<HTMLDivElement>(null);
+  const contentFilterRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+  const statsRef = useRef<HTMLDivElement>(null);
   const [filter, setFilter] = useState('all');
   const [expandedCards, setExpandedCards] = useState<Set<number>>(new Set());
   const [expandedTech, setExpandedTech] = useState<Set<number>>(new Set());
@@ -76,8 +79,23 @@ const Experience: React.FC = () => {
   });
 
   useScrollAnimation({
+    elementRef: subtitleRef,
+    threshold: 0.2
+  });
+
+  useScrollAnimation({
+    elementRef: contentFilterRef,
+    threshold: 0.1
+  });
+
+  useScrollAnimation({
     elementRef: contentRef,
     threshold: 0.1
+  });
+
+  useScrollAnimation({
+    elementRef: statsRef,
+    threshold: 0.3
   });
 
   const experiences = [
@@ -89,7 +107,7 @@ const Experience: React.FC = () => {
       duration: '2 months',
       location: 'Remote',
       type: 'Consulting',
-      category: 'ai',
+      category: ['ai','auto'],
       status: 'current',
       description: [
         'Identified high-impact AI opportunities, from AI-driven automation to machine learning models, creating marketable solutions that drove both efficiency and revenue for clients.',
@@ -100,7 +118,8 @@ const Experience: React.FC = () => {
       ],
       technologies: ['OpenAI', 'N8N', 'Ollama', 'Python', 'API Development', 'Automation'],
       achievements: [
-        'Built AI-powered automation workflows',
+        'Built AI-powered automation workflows.',
+        'Perform R&D to find key automation products for various domains.'
       ]
     },
     {
@@ -111,7 +130,7 @@ const Experience: React.FC = () => {
       duration: '2 years',
       location: 'Hybrid',
       type: 'Part-time',
-      category: 'data',
+      category: ['data','auto'],
       status: 'completed',
       description: [
         'Built automation for internal tools and products using Python and automation tools like Gitlab CI/CD and Jenkins.',
@@ -124,8 +143,8 @@ const Experience: React.FC = () => {
       technologies: ['Python', 'Flask', 'Jenkins', 'GitLab CI/CD', 'Data Analysis', 'PLM', 'Jama'],
       achievements: [
         'Automated creating Document Placeholder and BoI Elements in PLM.',
-        'Automated transfering items and item structures from one project to another.',
-        'Built CI/CD pipeline to create documents and build deploy folder and transfer it to Artifactory.'
+        'Automated transfering items and item structures from one project to another in Jama.',
+        'Built CI/CD pipeline to generate documentation from code and package the tool.'
       ]
     },
     {
@@ -136,7 +155,7 @@ const Experience: React.FC = () => {
       duration: '2 years',
       location: 'Remote',
       type: 'Full-time',
-      category: 'ml',
+      category: ['ai','auto','ml','data'],
       status: 'completed',
       description: [
         'Automated the machine learning pipeline and reduced the time taken by more than 50%',
@@ -150,23 +169,24 @@ const Experience: React.FC = () => {
       ],
       technologies: ['Python', 'Machine Learning', 'Tesla API', 'AWS', 'Docker', 'NLP', 'Web Scraping', 'Flask'],
       achievements: [
-        'Built automation pipeline for ML models',
-        'Reduced ML pipeline time by 50%',
-        'Built predictive models with 95%+ accuracy',
+        'Built automation pipeline for ML models with monitoring, logging and alerts.',
+        'Reduced ML pipeline time by 50% by optimizing and parallel processing.',
+        'Built predictive models with 95%+ accuracy.',
       ]
     }
   ];
 
   const categories = [
     { id: 'all', label: 'All Experience', icon: '💼' },
-    { id: 'ai', label: 'AI & Automation', icon: '🤖' },
+    { id: 'ai', label: 'AI', icon: '🤖' },
+    { id: 'auto', label: 'Automation', icon: '🔧' },
     { id: 'data', label: 'Data & Analytics', icon: '📊' },
     { id: 'ml', label: 'Machine Learning', icon: '🧠' }
   ];
 
   const filteredExperiences = filter === 'all'
     ? experiences
-    : experiences.filter(exp => exp.category === filter);
+    : experiences.filter(exp => exp.category.includes(filter));
 
   return (
     <section id="Experience" className="experience-section">
@@ -175,13 +195,13 @@ const Experience: React.FC = () => {
           <h2 ref={titleRef} className="section-title animate-out">
             Professional Journey
           </h2>
-          <p className="section-subtitle animate-out">
+          <p ref={subtitleRef} className="section-subtitle animate-out">
             Explore my career progression and key achievements across different domains
           </p>
         </div>
 
         {/* Filter Tabs */}
-        <div className="experience-filters animate-out">
+        <div ref={contentFilterRef} className="experience-filters animate-out">
           {categories.map((category) => (
             <button
               key={category.id}
@@ -323,13 +343,13 @@ const Experience: React.FC = () => {
         </div>
 
         {/* Experience Stats */}
-        <div className="experience-stats animate-out">
+        <div ref={statsRef} className="experience-stats animate-out">
           <div className="stat-item">
             <div className="stat-number">{experiences.length}</div>
             <div className="stat-label">Positions</div>
           </div>
           <div className="stat-item">
-            <div className="stat-number">5+</div>
+            <div className="stat-number">4+</div>
             <div className="stat-label">Years Experience</div>
           </div>
           <div className="stat-item">
@@ -337,7 +357,7 @@ const Experience: React.FC = () => {
             <div className="stat-label">Technologies</div>
           </div>
           <div className="stat-item">
-            <div className="stat-number">100+</div>
+            <div className="stat-number">25+</div>
             <div className="stat-label">Projects</div>
           </div>
         </div>

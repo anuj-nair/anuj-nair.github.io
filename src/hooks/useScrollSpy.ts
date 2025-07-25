@@ -101,9 +101,9 @@ export const useScrollSpy = ({ sectionIds, offset = 100 }: UseScrollSpyProps) =>
 
       // Update active section if it changed
       if (currentSection && currentSection !== activeSection) {
-        if (process.env.NODE_ENV === 'development') {
-          console.log('Setting active section to:', currentSection, 'at scroll position:', scrollPosition);
-        }
+        // if (process.env.NODE_ENV === 'development') {
+        //   console.log('Setting active section to:', currentSection, 'at scroll position:', scrollPosition);
+        // }
         setActiveSection(currentSection);
       }
     };
