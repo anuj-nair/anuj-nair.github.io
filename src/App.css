@@ -826,8 +826,14 @@ section {
   font-size: 0.8rem;
   font-weight: 500;
   border: 1px solid var(--accent-color);
+  transition: all 0.3s ease;
 }
 
+.tech-badge:hover {
+  background: var(--primary-color);
+  color: var(--accent-color);
+  transform: translateY(-2px);
+}
 .tech-more,
 .tech-less {
   background: var(--border-color);
@@ -941,6 +947,7 @@ section {
 
 .tech-tag:hover {
   background: var(--primary-color);
+  color: var(--accent-color);
   transform: translateY(-2px);
 }
 
